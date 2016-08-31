@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{C760206C-ABF1-4245-AE69-D5E628AEBA18}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <ProjectGuid>{30D1092F-39C0-4DBE-A6FD-15F2AF76BE11}</ProjectGuid>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Main</RootNamespace>
-    <AssemblyName>Main</AssemblyName>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -34,6 +32,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,18 +40,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="SearchFlag.cs" />
+    <Compile Include="JsonSerializer.cs" />
+    <Compile Include="ExpressionListExtension.cs" />
+    <Compile Include="ClassAdapter.cs" />
+    <Compile Include="DLinqTool.cs" />
+    <Compile Include="IDLinqTool.cs" />
+    <Compile Include="LinqTool\LinqExpression\NotEqualLinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\NotContainsLinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\LessOrEqLinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\LessLinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\ILinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\GreaterThanLinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\GreaterOrEqExpressionLinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\Factory.cs" />
+    <Compile Include="LinqTool\LinqExpression\ExpressionTool.cs" />
+    <Compile Include="LinqTool\LinqExpression\EqualLinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\ContainsLinqExpression.cs" />
+    <Compile Include="Models\SearchFilter.cs" />
+    <Compile Include="Models\Filter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Core\Core.csproj">
-      <Project>{30d1092f-39c0-4dbe-a6fd-15f2af76be11}</Project>
-      <Name>Core</Name>
-    </ProjectReference>
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
