@@ -18,10 +18,24 @@ A light library to generate lambada expression through object or JSON
   `above-ambda-result.compile();` //use compile method to produce lambda expression
   <br/></br>
 **Note:**  _You could find the details in /Main/Main/Program.cs_
+<br/></br>
 
-### SearchFilter Class
+### SearchFlag
+ <ul>
+  <li>**Type**: enum</li>
+  <li>
+    **Value**
+   <ul>
+    <li>AND</li>
+    <li>OR</li>
+   </ul>
+  </li>
+ </ul>
+<br/></br>
+
+### Filter Class
   <ul>
-    <li>***Type:*** Class</li>
+    <li>**Type**: Class</li>
     <li>
       Property:
       <ul>
@@ -33,16 +47,30 @@ A light library to generate lambada expression through object or JSON
   </ul>
 <br/><br/>
 
-### Search opration option
- <ul>
-  <li> "eq" -> equal</li>
-  <li> "eq" -> equal</li>
-  <li> "eq" -> equal</li>
-  <li> "eq" -> equal</li>
- </ul>
+### SearchFilter Class
+<ul>
+ <li>**Type**: Class</li>
+ <li>It's collection of **Filter** class</li>
+</ul>
+<br/></br>
 
- 
- 
+### Search opration option
+<ul>
+ <li>**Type**: string</li>
+ <li>
+  **Options**:
+  <ul>
+   <li> "eq" -> equal</li>
+   <li> "ne" -> not equal</li>
+   <li> "cn" -> contains</li>
+   <li> "nc" -> not contains</li>
+   <li> "lt" -> less</li>
+   <li> "le" -> less or equal</li>
+   <li> "gt" -> greater than</li>
+   <li> "ge" -> greater or equal</li>
+  </ul>
+ </li>
+</ul>
 <br/><br/>
 
 ### IDLinqTool interface
@@ -56,7 +84,7 @@ A light library to generate lambada expression through object or JSON
       <ul>
         _**Description:**_
         <li>**Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***</li>
-        <li>**filter:** Instance of object ***SearchFilter*** {filed: filedName, op: operation[eq,nq,cn etc..], data: data}</li>
+        <li>**filter:** Instance of object ***SearchFilter*** list of {filed: filedName, op: operation[eq,nq,cn etc..], data: data}</li>
       </ul>
     </li>
     <br/>
