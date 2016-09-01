@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{30D1092F-39C0-4DBE-A6FD-15F2AF76BE11}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Core</RootNamespace>
+    <AssemblyName>Core</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SearchFlag.cs" />
+    <Compile Include="JsonSerializer.cs" />
+    <Compile Include="ExpressionListExtension.cs" />
+    <Compile Include="ClassAdapter.cs" />
+    <Compile Include="DLinqTool.cs" />
+    <Compile Include="IDLinqTool.cs" />
+    <Compile Include="LinqTool\LinqExpression\NotEqualLinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\NotContainsLinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\LessOrEqLinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\LessLinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\ILinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\GreaterThanLinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\GreaterOrEqExpressionLinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\Factory.cs" />
+    <Compile Include="LinqTool\LinqExpression\ExpressionTool.cs" />
+    <Compile Include="LinqTool\LinqExpression\EqualLinqExpression.cs" />
+    <Compile Include="LinqTool\LinqExpression\ContainsLinqExpression.cs" />
+    <Compile Include="Models\SearchFilter.cs" />
+    <Compile Include="Models\Filter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

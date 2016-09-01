@@ -1,2 +1,2 @@
 # DylamicLinq
-A light library to generate lambada expression through object or joson
+A light library to generate lambada expression through object or JSON
