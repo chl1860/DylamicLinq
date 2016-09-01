@@ -41,7 +41,7 @@ A light library to generate lambada expression through object or JSON
       <ul>
         <li>filed: filedName _string_</li>
         <li>data: filedValue _string_</li>
-        <li>op: oprator ption _string_</li>
+        <li>op: operator ption _string_</li>
       </ul>
     </li>
   </ul>
