@@ -31,7 +31,7 @@ A light library to generate lambada expression through object or JSON
    </ul>
   </li>
  </ul>
-<br/></br>
+<br/>
 
 ### Filter Class
   <ul>
@@ -45,14 +45,14 @@ A light library to generate lambada expression through object or JSON
       </ul>
     </li>
   </ul>
-<br/><br/>
+<br/>
 
 ### SearchFilter Class
 <ul>
  <li>**Type**: Class</li>
  <li>It's collection of **Filter** class</li>
 </ul>
-<br/></br>
+<br/>
 
 ### Search opration option
 <ul>
@@ -71,7 +71,7 @@ A light library to generate lambada expression through object or JSON
   </ul>
  </li>
 </ul>
-<br/><br/>
+<br/>
 
 ### IDLinqTool interface
   <ul>
