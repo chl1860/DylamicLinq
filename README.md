@@ -34,7 +34,15 @@ A light library to generate lambada expression through object or JSON
 <br/><br/>
 
 ### Search opration option
- "eq" -> equal<br/>
+ <ul>
+  <li> "eq" -> equal</li>
+  <li> "eq" -> equal</li>
+  <li> "eq" -> equal</li>
+  <li> "eq" -> equal</li>
+ </ul>
+
+ 
+ 
 <br/><br/>
 
 ### IDLinqTool interface
