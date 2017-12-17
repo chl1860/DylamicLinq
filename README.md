@@ -1,28 +1,28 @@
+
 # DylamicLinq
 A light library to generate lambada expression through object or JSON
-
-### Samples
+## Samples
 **Step1.** Greate instance of your object. <br/>
 `var obj = new Student();` // here 'Student' could replaced by any of your own object <br/>
 <br/>
 **Step2.** Initiallize IDLinqTool: <br/>
 `IDLinqTool tool = new DLinqTool();`<br/><br/>
+
 **Step3.** Generate lambda expression:<br/>
 1. *Group By* expressoin: <br/>
 `var lambda = tool.GetGroupByLambda(obj, your-group-by-field);` //i => Convert(i.your-group-by-field)<br/><br/>
 2. *Order By* expression:<br/>
-`var orderLambda = tool.GetOrderByLambda(obj, your-order-by-field);` //i => Convert(i.your-order-by-field)<br/> <br/>
-3. *Where*<br/>
+`var orderLambda = tool.GetOrderByLambda(obj, your-order-by-field);` //i => Convert(i.your-order-by-field)<br/> <br/>3. *Where*<br/>
  `var stdLambda = tool.GetLambda(obj, searchList);`//i => ((bool-expression-1) AndAlso (bool-expression-2))<br/><br/>
 4. *Compile* <br/>
-  `above-ambda-result.compile();` //use compile method to produce lambda expression
+  `above-lambda-result.compile();` //use compile method to produce lambda expression
   <br/></br>
 **Note:**  _You could find the details in /Main/Main/Program.cs_
 <br/></br>
 
-### SearchFlag
+## SearchFlag
  * **Type**: _enum_ <br/>
- * **Value:**
+ * **Value:**   
    * _AND_
    * _OR_
 
@@ -33,12 +33,12 @@ A light library to generate lambada expression through object or JSON
     * data: filedValue [_string_]
     * op: operator ption [_string_]
 
-### SearchFilter Class
+## SearchFilter Class
 * **Type**: _Class_
 
  It's collection of **Filter** class
 
-### Search opration option
+## Search opration option
 * **Type**: _string_
 * **Options**:
    * "eq" -> equal
@@ -49,7 +49,7 @@ A light library to generate lambada expression through object or JSON
    * "gt" -> greater than
    * "ge" -> greater or equal
 
-### IDLinqTool interface
+## IDLinqTool interface
   * **GetLambda<T>(T obj, SearchFilter filter)** *Return expression*<br/>
       
        * _**Parameters:**_
@@ -88,16 +88,16 @@ A light library to generate lambada expression through object or JSON
 *   **GetOrderByLambda<T>(T obj, string properName)** *Return expression* 
       
   *  _**Parameters:**_
-        * **obj**: source object
+        * **obj**: _source object_
         * **properName**: property need to include in lambda expression
       
-  * _**Description:**_
+  *  _**Description:**_
         * **Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***
       
 *   **GetGroupByLambda<T>(T obj, string properName)** *Return expression*
       
     * _**Parameters:**_
-        * **obj**: source object
+        * **obj**: _source object_
         * **properName**: property need to include in lambda expression
 
     * _**Description:**_
