@@ -21,120 +21,84 @@ A light library to generate lambada expression through object or JSON
 <br/></br>
 
 ### SearchFlag
- <ul>
-  <li>**Type**: enum</li>
-  <li>
-    **Value**
-   <ul>
-    <li>AND</li>
-    <li>OR</li>
-   </ul>
-  </li>
- </ul>
-<br/>
+ * **Type**: _enum_ <br/>
+ * **Value:**
+   * _AND_
+   * _OR_
 
-### Filter Class
-  <ul>
-    <li>**Type**: Class</li>
-    <li>
-      Property:
-      <ul>
-        <li>filed: filedName _string_</li>
-        <li>data: filedValue _string_</li>
-        <li>op: operator ption _string_</li>
-      </ul>
-    </li>
-  </ul>
-<br/>
+## Filter Class
+* **Type**: _Class_
+* **Property**:
+    * filed: filedName [_string_]
+    * data: filedValue [_string_]
+    * op: operator ption [_string_]
 
 ### SearchFilter Class
-<ul>
- <li>**Type**: Class</li>
- <li>It's collection of **Filter** class</li>
-</ul>
-<br/>
+* **Type**: _Class_
+
+ It's collection of **Filter** class
 
 ### Search opration option
-<ul>
- <li>**Type**: string</li>
- <li>
-  **Options**:
-  <ul>
-   <li> "eq" -> equal</li>
-   <li> "ne" -> not equal</li>
-   <li> "cn" -> contains</li>
-   <li> "nc" -> not contains</li>
-   <li> "lt" -> less</li>
-   <li> "le" -> less or equal</li>
-   <li> "gt" -> greater than</li>
-   <li> "ge" -> greater or equal</li>
-  </ul>
- </li>
-</ul>
-<br/>
+* **Type**: _string_
+* **Options**:
+   * "eq" -> equal
+   * "ne" -> not equal
+   * "cn" -> contains   * "nc" -> not contains
+   * "lt" -> less
+   * "le" -> less or equal
+   * "gt" -> greater than
+   * "ge" -> greater or equal
 
 ### IDLinqTool interface
-  <ul>
-    <li>GetLambda<T>(T obj, SearchFilter filter) *Return expression*<br/>
-      <ul>
-        _**Parameters:**_
-        <li>**obj**: source object</li>
-        <li>**filter**: filter rules</li>
-      </ul>
-      <ul>
-        _**Description:**_
-        <li>**Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***</li>
-        <li>**filter:** Instance of object ***SearchFilter*** list of {filed: filedName, op: operation[eq,nq,cn etc..], data: data}</li>
-      </ul>
-    </li>
-    <br/>
-    <li>GetLambda<T>(T obj, string jsonFilter) *Return expression* <br/>
-      <ul>
-          _**Parameters:**_
-          <li>**obj**: source object</li>
-          <li>**jsonFilter**: ***SearchFilter***'s serializition string </li>
-        </ul>
-        <ul>
-          _**Description:**_
-          <li>**Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***</li>
-      </ul>
-    </li><br/>
-    <li>
-      GetLambda<T>(T obj, List<SearchFilter> searchFilters, SearchFlag searchFlag = SearchFlag.AND) *Return expression* <br/>
-      <ul>
-          _**Parameters:**_
-          <li>**obj**: source object</li>
-          <li>**searchFilters**: ***SearchFilter*** list </li>
-          <li>**SearchFlag:** An enum inluding ***'AND'*** and ***Or***</li>
-        </ul>
-        <ul>
-          _**Description:**_
-          <li>**Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***</li>
-      </ul>
-    </li>
-    <br/>
-    <li>GetOrderByLambda<T>(T obj, string properName) *Return expression* <br/>
-      <ul>
-        _**Parameters:**_
-        <li>**obj**: source object</li>
-        <li>**properName**: property need to include in lambda expression</li>
-      </ul>
-      <ul>
-        _**Description:**_
-        <li>**Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***</li>
-      </ul>
-    </li>
-    <br/>
-    <li>
-      GetGroupByLambda<T>(T obj, string properName) *Return expression* <br/>
-      <ul>
-          _**Parameters:**_
-          <li>**obj**: source object</li>
-          <li>**properName**: property need to include in lambda expression</li>
-        </ul>
-        <ul>
-          _**Description:**_
-          <li>**Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***</li>
-        </ul>
-    </li>
-  </ul>
+  * **GetLambda<T>(T obj, SearchFilter filter)** *Return expression*<br/>
+      
+       * _**Parameters:**_
+            * **obj**: source object
+            * **filter**: filter rules
+      
+       *  _**Description:**_
+            * **Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***
+        * **filter:** Instance of object ***SearchFilter*** list of 
+        
+        { filed: filedName,
+          op: operation[eq,nq,cn etc..],
+          data: data
+        }
+    
+  * **GetLambda<T>(T obj, string jsonFilter)** *Return expression*
+      
+    *   _**Parameters:**_
+          * **obj**: _source object_
+          * **jsonFilter**: _**SearchFilter's** serializition string_ 
+       
+    *  _**Description:**_
+          * **Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***
+   
+* **GetLambda<T>(T obj, List<SearchFilter> searchFilters, SearchFlag searchFlag = SearchFlag.AND)** *Return expression*
+  
+  *   _**Parameters:**_
+        * **obj**: source object
+        * **searchFilters**: ***SearchFilter*** list 
+        * **SearchFlag:** An enum inluding ***'AND'*** and * **Or***
+        
+        
+  *   _**Description:**_
+        * **Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***
+    
+*   **GetOrderByLambda<T>(T obj, string properName)** *Return expression* 
+      
+  *  _**Parameters:**_
+        * **obj**: source object
+        * **properName**: property need to include in lambda expression
+      
+  * _**Description:**_
+        * **Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***
+      
+*   **GetGroupByLambda<T>(T obj, string properName)** *Return expression*
+      
+    * _**Parameters:**_
+        * **obj**: source object
+        * **properName**: property need to include in lambda expression
+
+    * _**Description:**_
+        * **Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***
