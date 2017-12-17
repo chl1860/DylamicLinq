@@ -22,27 +22,23 @@ A light library to generate lambada expression through object or JSON
 
 ## SearchFlag
  * **Type**: _enum_ <br/>
- * **Value:**   
+ * **Value:**      
    * _AND_
    * _OR_
-
 ## Filter Class
 * **Type**: _Class_
 * **Property**:
     * filed: filedName [_string_]
-    * data: filedValue [_string_]
-    * op: operator ption [_string_]
+   * data: filedValue [_string_]    * op: operator ption [_string_]
 
 ## SearchFilter Class
-* **Type**: _Class_
+ * **Type**: _Class_
 
  It's collection of **Filter** class
-
 ## Search opration option
 * **Type**: _string_
 * **Options**:
-   * "eq" -> equal
-   * "ne" -> not equal
+   * "eq" -> equal   * "ne" -> not equal
    * "cn" -> contains   * "nc" -> not contains
    * "lt" -> less
    * "le" -> less or equal
@@ -74,7 +70,7 @@ A light library to generate lambada expression through object or JSON
     *  _**Description:**_
           * **Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***
    
-* **GetLambda<T>(T obj, List<SearchFilter> searchFilters, SearchFlag searchFlag = SearchFlag.AND)** *Return expression*
+ * **GetLambda<T>(T obj, List<SearchFilter> searchFilters, SearchFlag searchFlag = SearchFlag.AND)** *Return expression*
   
   *   _**Parameters:**_
         * **obj**: source object
@@ -85,7 +81,7 @@ A light library to generate lambada expression through object or JSON
   *   _**Description:**_
         * **Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***
     
-*   **GetOrderByLambda<T>(T obj, string properName)** *Return expression* 
+* **GetOrderByLambda<T>(T obj, string properName)** *Return expression* 
       
   *  _**Parameters:**_
         * **obj**: _source object_
@@ -94,11 +90,11 @@ A light library to generate lambada expression through object or JSON
   *  _**Description:**_
         * **Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***
       
-*   **GetGroupByLambda<T>(T obj, string properName)** *Return expression*
+* **GetGroupByLambda<T>(T obj, string properName)** *Return expression*
       
-    * _**Parameters:**_
+  *  _**Parameters:**_
         * **obj**: _source object_
         * **properName**: property need to include in lambda expression
 
-    * _**Description:**_
+  *  _**Description:**_
         * **Summary:** Get simple lambda expression incluing verbs ***'AndAlso'*** or ***'Or'***
